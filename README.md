@@ -1,2 +1,3 @@
-# medium
-Medium clone built with React / Node
+# Blogging app
+
+Blogging app built with React / Node

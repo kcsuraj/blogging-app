@@ -8,7 +8,7 @@
     "setup": "npm install",
     "build-ts": "tsc",
     "watch-ts": "tsc -w",
-    "start": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"yarn watch-ts\" \"nodemon dist/app.js\"",
+    "start": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"yarn watch-ts\" \"nodemon build/app.js\"",
     "build": "yarn build-ts",
     "prettier": "prettier --single-quote --write \"src/**/*.{ts,md}\"",
     "lint": "eslint src/**/*.ts --fix"

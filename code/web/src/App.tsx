@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC } from 'react';
 
 const App: FC = () => (
   <div className="md:flex">
@@ -20,6 +20,6 @@ const App: FC = () => (
       </p>
     </div>
   </div>
-)
+);
 
-export default App
+export default App;

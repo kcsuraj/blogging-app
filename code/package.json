@@ -1,0 +1,28 @@
+{
+  "name": "blogging-app",
+  "version": "1.0.0",
+  "description": "blogging app clone built with React / Node",
+  "main": "index.js",
+  "scripts": {
+    "setup:local": "npm install",
+    "setup:all": "concurrently 'npm run setup:web' 'npm run setup:api' --names 'web,api'",
+    "setup:web": "npm run setup --prefix web",
+    "setup:api": "npm run setup --prefix api",
+    "start": "concurrently 'npm run start:web' 'npm run start:api' --kill-others --names 'web,api'",
+    "start:web": "npm run start --prefix web",
+    "start:api": "npm run start --prefix api"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kcsuraj/blogging app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kcsuraj/blogging app/issues"
+  },
+  "homepage": "https://github.com/kcsuraj/blogging app#readme",
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  }
+}

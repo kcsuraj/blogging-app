@@ -1,0 +1,45 @@
+{
+  "name": "typecript-node-starter",
+  "version": "1.0.0",
+  "repository": "https://github.com/kcsuraj/typecript-node-starter.git",
+  "author": "Suraj kc <isurajkc@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "setup": "npm install",
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w",
+    "start": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"yarn watch-ts\" \"nodemon dist/app.js\"",
+    "build": "yarn build-ts",
+    "lint": "tslint --project tsconfig.json",
+    "lint:fix": "tslint --fix --project tsconfig.json",
+    "prettier": "prettier --single-quote --write \"src/*.{ts,md}\""
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.2",
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.4",
+    "@types/mongoose": "^5.7.8",
+    "@types/morgan": "^1.9.1",
+    "@types/concurrently": "^5.1.0",
+    "@types/joi": "^14.3.4",
+    "lint-staged": "^10.1.1",
+    "nodemon": "^2.0.2",
+    "prettier": "^2.0.2",
+    "tslint": "^6.1.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^5.1.0",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http-status-codes": "^1.4.0",
+    "joi": "^14.3.1",
+    "mongoose": "^5.9.7",
+    "morgan": "^1.10.0",
+    "winston": "^3.2.1"
+  }
+}

@@ -1,23 +1,23 @@
 /**
  * Entry point to the application
  */
-import express, { Application } from 'express';
-import { setupLoadModules, setupDatabase, setupServer, setupErrorHandler, setupRoutes } from './setup';
+import express, { Application } from 'express'
+import { setupLoadModules, setupDatabase, setupServer, setupErrorHandler, setupRoutes } from './setup'
 
 // Create Express server
-const app: Application = express();
+const app: Application = express()
 
 // Setup load modules
-setupLoadModules(app);
+setupLoadModules(app)
 
 // Setup database
-setupDatabase();
+setupDatabase()
 
 // Setup routes
-setupRoutes(app);
+setupRoutes(app)
 
 // Setup error handlers
-setupErrorHandler(app);
+setupErrorHandler(app)
 
 // Setup server
-setupServer(app);
+setupServer(app)

@@ -1,9 +1,9 @@
 /** Custom error handling middlewares for use in express with helper error utils  */
 
-import { Request, Response, NextFunction } from 'express';
-import HttpStatus from 'http-status-codes';
-import HttpError from '../services/errorService';
-import { logger } from '../utils/logger';
+import { Request, Response, NextFunction } from 'express'
+import HttpStatus from 'http-status-codes'
+import HttpError from '../services/errorService'
+import { logger } from '../utils/logger'
 
 /**
  * Flag to determine if error is an operational error and should be handled properly
@@ -13,9 +13,9 @@ import { logger } from '../utils/logger';
  */
 function isTrustedError(err: HttpError) {
   if (err instanceof HttpError) {
-    return err.isOperational;
+    return err.isOperational
   }
-  return false;
+  return false
 }
 
 /**
@@ -28,13 +28,13 @@ function isTrustedError(err: HttpError) {
  * @returns
  */
 function errorMiddleware(error: any, req: Request, res: Response, next: NextFunction) {
-  logger.error(JSON.stringify(error));
+  logger.error(JSON.stringify(error))
 
   if (!error.isOperational) {
-    return process.exit();
+    return process.exit()
   }
 
-  res.status(error.httpCode).json(error);
+  res.status(error.httpCode).json(error)
 }
 
 /**
@@ -49,7 +49,7 @@ function notFoundHandler(req: Request, res: Response, next: NextFunction) {
       code: HttpStatus.NOT_FOUND,
       message: HttpStatus.getStatusText(HttpStatus.NOT_FOUND)
     }
-  });
+  })
 }
 
-export { isTrustedError, errorMiddleware, notFoundHandler };
+export { isTrustedError, errorMiddleware, notFoundHandler }

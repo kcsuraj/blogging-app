@@ -1,1 +1,1 @@
-export { default as MongooseService } from './mongooseService';
+export { default as MongooseService } from './mongooseService'

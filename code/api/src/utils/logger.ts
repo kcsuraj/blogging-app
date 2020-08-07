@@ -2,7 +2,7 @@
  * write log messages in log files in production environment
  */
 
-import winston from 'winston';
+import winston from 'winston'
 
 const options = {
   file: {
@@ -29,15 +29,15 @@ const options = {
       winston.format.printf((info) => `${info.level}: ${info.message}`)
     )
   }
-};
+}
 
 const logger = winston.createLogger({
   transports: [new winston.transports.Console(options.console)],
   exitOnError: false // do not exit on handled exceptions
-});
+})
 
 if (process.env.NODE_ENV === 'production') {
-  logger.add(new winston.transports.File(options.file));
+  logger.add(new winston.transports.File(options.file))
 }
 
-export { logger };
+export { logger }

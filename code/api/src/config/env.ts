@@ -1,6 +1,6 @@
-import dotenv from 'dotenv';
+import dotenv from 'dotenv'
 // Load.env
-dotenv.config();
+dotenv.config()
 
 /**
  * Map environment variables using dotenv
@@ -11,4 +11,4 @@ export default {
     name: process.env.DB_NAME
   },
   port: process.env.PORT
-};
+}

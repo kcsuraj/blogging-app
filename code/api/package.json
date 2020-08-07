@@ -12,7 +12,7 @@
     "build": "yarn build-ts",
     "lint": "tslint --project tsconfig.json",
     "lint:fix": "tslint --fix --project tsconfig.json",
-    "prettier": "prettier --single-quote --write \"src/*.{ts,md}\""
+    "prettier": "prettier --single-quote --write \"src/**/*.{ts,md}\""
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.2",

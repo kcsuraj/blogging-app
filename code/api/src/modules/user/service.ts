@@ -1,7 +1,7 @@
-import userModel, { IUser } from './model';
-import { MongooseService } from '../../services';
+import userModel, { IUser } from './model'
+import { MongooseService } from '../../services'
 
-const mongoseService = new MongooseService(userModel);
+const mongoseService = new MongooseService(userModel)
 
 /**
  * Create a user
@@ -9,7 +9,7 @@ const mongoseService = new MongooseService(userModel);
  * @returns {Promise<IUser>}
  */
 function createUser(user: IUser) {
-  return mongoseService.create(user);
+  return mongoseService.create(user)
 }
 
-export { createUser };
+export { createUser }

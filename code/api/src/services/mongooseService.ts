@@ -1,16 +1,16 @@
-import { Model } from 'mongoose';
+import { Model } from 'mongoose'
 
 class MongooseService {
   /**
    * Moongoose model
    */
-  model: Model<any>;
+  model: Model<any>
   /**
    * @description Create an instance of the MongooseService class
    * @param {Model<any>} model Mongoose Model to use for the instance
    */
   constructor(model: Model<any>) {
-    this.model = model;
+    this.model = model
   }
 
   /**
@@ -19,8 +19,8 @@ class MongooseService {
    * @returns {Promise} body Returns the results of the query
    */
   create(body: any) {
-    return this.model.create(body);
+    return this.model.create(body)
   }
 }
 
-export default MongooseService;
+export default MongooseService

@@ -10,9 +10,8 @@
     "watch-ts": "tsc -w",
     "start": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"yarn watch-ts\" \"nodemon dist/app.js\"",
     "build": "yarn build-ts",
-    "lint": "tslint --project tsconfig.json",
-    "lint:fix": "tslint --fix --project tsconfig.json",
-    "prettier": "prettier --single-quote --write \"src/**/*.{ts,md}\""
+    "prettier": "prettier --single-quote --write \"src/**/*.{ts,md}\"",
+    "lint": "eslint src/**/*.ts --fix"
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.2",
@@ -25,9 +24,13 @@
     "lint-staged": "^10.1.1",
     "nodemon": "^2.0.2",
     "prettier": "^2.0.2",
-    "tslint": "^6.1.1",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "@typescript-eslint/eslint-plugin": "^3.5.0",
+    "@typescript-eslint/parser": "^3.5.0",
+    "autoprefixer": "^9.8.6",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4"
   },
   "dependencies": {
     "body-parser": "^1.19.0",

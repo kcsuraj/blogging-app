@@ -1,9 +1,9 @@
 /**
  * Ref: https://medium.com/better-programming/react-router-architecture-thats-simple-scalable-and-protected-da896827f946
  */
-import React, { ReactElement, FC } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { Landing } from './modules';
+import React, { ReactElement, FC } from 'react'
+import { Route, Switch } from 'react-router-dom'
+import { Landing } from './modules'
 
 const routes: any[] = [
   { path: '/', key: 'ROOT', exact: true, component: Landing },
@@ -26,11 +26,11 @@ const routes: any[] = [
       }
     ]
   }
-];
+]
 
 const RouteWithSubRoutes = (route: any): ReactElement => (
   <Route path={route.path} exact={route.exact} render={props => <route.component {...props} routes={route.routes} />} />
-);
+)
 
 const RenderRoutes: FC = () => (
   <Switch>
@@ -39,6 +39,6 @@ const RenderRoutes: FC = () => (
     ))}
     <Route component={() => <h1>Not Found!</h1>} />
   </Switch>
-);
+)
 
-export { RenderRoutes, routes };
+export { RenderRoutes, routes }

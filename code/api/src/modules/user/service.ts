@@ -1,10 +1,8 @@
 import userModel, { IUser } from './model'
 import { MongooseService } from '../../services'
-import bcrypt from 'bcrypt'
+import { hash } from './utils/bcrypt'
 
 const mongooseService = new MongooseService(userModel)
-
-const SALT_WORK_FACTOR = 10
 
 /**
  * Find user by email address
@@ -21,11 +19,7 @@ function findUserByEmail(email: IUser['email']) {
  * @returns {Promise<IUser>}
  */
 function createUser(user: IUser) {
-  // Generate password hash using bcrypt
-  const salt = bcrypt.genSaltSync(SALT_WORK_FACTOR)
-  const hash = bcrypt.hashSync(user.password, salt)
-
-  return mongooseService.create({ ...user, password: hash })
+  return mongooseService.create({ ...user, password: hash(user.password) })
 }
 
 export { findUserByEmail, createUser }

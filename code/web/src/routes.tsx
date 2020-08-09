@@ -37,7 +37,7 @@ const RouteWithSubRoutes = (route: any): ReactElement => (
 const RenderRoutes: FC = () => (
   <Switch>
     {routes.map((route: any) => (
-      <RouteWithSubRoutes key={route.key} {...route} />
+      <RouteWithSubRoutes key={route.path} {...route} />
     ))}
     <Route component={() => <h1>Not Found!</h1>} />
   </Switch>

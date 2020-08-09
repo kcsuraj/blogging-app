@@ -6,8 +6,8 @@ import validator from '../../middlewares/validator'
 const router: Router = Router()
 
 /**
- * POST /api/users
+ * POST /api/user/signup
  */
-router.post('/', validator(schema.createUser), createUser)
+router.post('/signup', validator(schema.createUser), createUser)
 
 export default router

@@ -8,15 +8,15 @@ function validator(schema: AnySchema) {
 
     if (error === null) {
       next()
+    } else {
+      const filteredErrors = error.details.map((value) => ({ message: value.message, key: value.context.key }))
+
+      return res.status(HttpStatus.UNPROCESSABLE_ENTITY).json({
+        name: error.name,
+        code: HttpStatus.UNPROCESSABLE_ENTITY,
+        description: filteredErrors
+      })
     }
-
-    const filteredErrors = error.details.map((value) => ({ message: value.message, key: value.context.key }))
-
-    return res.status(HttpStatus.UNPROCESSABLE_ENTITY).json({
-      name: error.name,
-      code: HttpStatus.UNPROCESSABLE_ENTITY,
-      description: filteredErrors
-    })
   }
 }
 

@@ -3,28 +3,30 @@
  */
 import React, { ReactElement, FC } from 'react'
 import { Route, Switch } from 'react-router-dom'
-import { Landing } from './modules'
+import Landing from './modules/landing'
+import { SignIn, SignUp } from './modules/auth'
 
 const routes: any[] = [
-  { path: '/', key: 'ROOT', exact: true, component: Landing },
+  { path: '/', exact: true, component: Landing },
   {
-    path: '/app',
-    key: 'APP',
-    component: () => <h1>App Index</h1>,
-    routes: [
-      {
-        path: '/app',
-        key: 'APP_ROOT',
-        exact: true,
-        component: () => <h1>App Index</h1>
-      },
-      {
-        path: '/app/page',
-        key: 'APP_PAGE',
-        exact: true,
-        component: () => <h1>App Page</h1>
-      }
-    ]
+    path: '/signin',
+    component: SignIn
+    // routes: [
+    //   {
+    //     path: '/app',
+    //     exact: true,
+    //     component: () => <h1>App Index</h1>
+    //   },
+    //   {
+    //     path: '/app/page',
+    //     exact: true,
+    //     component: () => <h1>App Page</h1>
+    //   }
+    // ]
+  },
+  {
+    path: '/signup',
+    component: SignUp
   }
 ]
 

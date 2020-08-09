@@ -11,8 +11,14 @@ async function createUser(req: Request, res: Response, next: NextFunction) {
       throw new Http400Error('User already exits')
     }
 
-    await userService.createUser(req.body)
-    res.status(HttpStatus.OK).json({ status: 200 })
+    const { email, fullName } = await userService.createUser(req.body)
+
+    const response = {
+      email,
+      fullName
+    }
+
+    res.status(HttpStatus.OK).json(response)
   } catch (error) {
     next(error)
   }

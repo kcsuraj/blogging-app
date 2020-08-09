@@ -1,6 +1,5 @@
 import userModel, { IUser } from './model'
 import { MongooseService } from '../../services'
-import { Http400Error } from '../../services/errorService'
 import bcrypt from 'bcrypt'
 
 const mongooseService = new MongooseService(userModel)
